@@ -10,7 +10,7 @@
   <a href="https://github.com/manmeetnain/design-to-ship/actions/workflows/validate.yml"><img alt="Validation" src="https://github.com/manmeetnain/design-to-ship/actions/workflows/validate.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-38BDF8.svg"></a>
   <img alt="Agent Skill" src="https://img.shields.io/badge/open-Agent_Skill-A7F3D0.svg">
-  <img alt="Release" src="https://img.shields.io/badge/release-0.4.0-CBD5E1.svg">
+  <img alt="Release" src="https://img.shields.io/badge/release-0.5.0-CBD5E1.svg">
 </p>
 
 ---
@@ -157,6 +157,10 @@ PYTHONPATH=src python3 -m design_to_ship library patterns onboarding
 PYTHONPATH=src python3 -m design_to_ship export examples/beacon/project.json --output /tmp/beacon.md
 PYTHONPATH=src python3 -m design_to_ship evidence examples/beacon/project.json --output /tmp/beacon-evidence
 ```
+
+## Verification automation
+
+Every push runs contract tests and static prototype checks. The browser job exercises the Beacon fixture at desktop and mobile sizes, checks interaction and overflow, and uploads screenshot evidence. See [the verification model](docs/verification.md) for scope and limitations.
 
 ## Design principles
 

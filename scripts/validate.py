@@ -95,7 +95,7 @@ def check_evals() -> None:
 def check_links() -> None:
     link_pattern = re.compile(r"\[[^]]*]\((?!https?://|mailto:|#)([^)]+)\)")
     for path in ROOT.rglob("*.md"):
-        if ".git" in path.parts:
+        if {".git", "node_modules", "artifacts"} & set(path.parts):
             continue
         text = path.read_text(encoding="utf-8")
         for target in link_pattern.findall(text):
