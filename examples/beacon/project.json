@@ -1,0 +1,35 @@
+{
+  "project": "Beacon incident queue",
+  "mode": "FULL",
+  "outcome": "Reduce the time required to understand and acknowledge the next incident requiring action.",
+  "evidence": [
+    {"id": "E-01", "status": "CONFIRMED", "claim": "The fictional brief prioritizes identifying the highest-priority unresolved incident.", "source": "examples/beacon/README.md", "material": true},
+    {"id": "E-02", "status": "CONFIRMED", "claim": "The fictional brief requires ownership and latest-update visibility.", "source": "examples/beacon/README.md", "material": true},
+    {"id": "E-03", "status": "CONFIRMED", "claim": "Acknowledgement must work without opening a separate detail page.", "source": "examples/beacon/README.md", "material": true},
+    {"id": "E-04", "status": "CONFIRMED", "claim": "The target includes 375 px and keyboard operation.", "source": "examples/beacon/README.md", "material": true},
+    {"id": "E-05", "status": "UNKNOWN", "claim": "Production integrations and persistence are not specified and remain outside this prototype.", "material": false}
+  ],
+  "requirements": [
+    {"id": "R-01", "statement": "The queue exposes unresolved incidents in priority order.", "evidence_ids": ["E-01"], "acceptance_criteria": ["The critical unresolved incident appears before lower-priority incidents."]},
+    {"id": "R-02", "statement": "Every incident exposes its owner and latest meaningful update.", "evidence_ids": ["E-02"], "acceptance_criteria": ["Owner and latest update are visible without opening another route."]},
+    {"id": "R-03", "statement": "A responder can acknowledge an incident from the queue.", "evidence_ids": ["E-03"], "acceptance_criteria": ["Activating Acknowledge changes the item state and announces the result."]},
+    {"id": "R-04", "statement": "The critical journey works at 375 px and with keyboard input.", "evidence_ids": ["E-04"], "acceptance_criteria": ["At 375 px the page has no horizontal scrolling and all controls remain reachable in logical keyboard order."]}
+  ],
+  "decisions": [
+    {"id": "D-01", "choice": "Sort unresolved critical incidents first and keep explicit priority labels.", "requirement_ids": ["R-01"], "alternative": "Let users infer priority from color and arrival time.", "tradeoff": "The row carries more visible metadata but reduces ambiguity.", "verification": "Inspect the initial DOM order and visible labels."},
+    {"id": "D-02", "choice": "Keep owner and latest update in every queue row.", "requirement_ids": ["R-02"], "alternative": "Show the information only in the detail panel.", "tradeoff": "Rows are taller in exchange for faster scanning.", "verification": "Inspect every incident row without selecting it."},
+    {"id": "D-03", "choice": "Use an inline button and polite live region for acknowledgement.", "requirement_ids": ["R-03"], "alternative": "Require a modal confirmation for every acknowledgement.", "tradeoff": "The common action is faster; production policy may still require confirmation for higher-risk transitions.", "verification": "Activate by mouse and keyboard and inspect visible and announced state."},
+    {"id": "D-04", "choice": "Collapse the two-column workspace into one content-driven column below 760 px.", "requirement_ids": ["R-04"], "alternative": "Preserve a compressed split view.", "tradeoff": "Detail moves below the queue, prioritizing the critical task over simultaneous context.", "verification": "Inspect at 375 px and test keyboard order."}
+  ],
+  "screens": [
+    {"id": "S-01", "name": "Incident queue", "requirement_ids": ["R-01", "R-02", "R-03", "R-04"], "states": ["default", "filtered", "acknowledged", "narrow viewport"]}
+  ],
+  "verifications": [
+    {"id": "V-01", "requirement_ids": ["R-01"], "decision_ids": ["D-01"], "result": "PASS", "method": "Static DOM inspection", "evidence": "Critical unresolved INC-248 appears first and carries a visible Critical label."},
+    {"id": "V-02", "requirement_ids": ["R-02"], "decision_ids": ["D-02"], "result": "PASS", "method": "Static content inspection", "evidence": "Each rendered incident includes owner and latest-update content."},
+    {"id": "V-03", "requirement_ids": ["R-03"], "decision_ids": ["D-03"], "result": "PASS", "method": "Script and semantic inspection", "evidence": "The button updates its label, status chip, and aria-live region."},
+    {"id": "V-04", "requirement_ids": ["R-04"], "decision_ids": ["D-04"], "result": "PARTIAL", "method": "Responsive CSS inspection", "evidence": "A 760 px media query creates one column; manual browser and assistive-technology checks remain required."}
+  ],
+  "verdict": "READY WITH RISKS"
+}
+

@@ -24,3 +24,15 @@ jobs:
       - name: Validate repository
         run: python3 scripts/validate.py
 
+      - name: Run contract tests
+        env:
+          PYTHONPATH: src
+        run: python3 -m unittest discover -s tests -v
+
+      - name: Exercise CLI
+        env:
+          PYTHONPATH: src
+        run: |
+          python3 -m design_to_ship validate examples/focus-checkout.json
+          python3 -m design_to_ship trace examples/focus-checkout.json
+          python3 -m design_to_ship validate examples/beacon/project.json

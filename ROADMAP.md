@@ -14,11 +14,11 @@ Design to Ship will grow through tested workflows rather than an unbounded colle
 
 ## 0.2 — Proof of usefulness
 
-- [ ] One complete worked example from brief to proof
+- [x] One complete worked example from brief to proof
 - [x] Initial JSON schema for requirements, decisions, and verdicts
-- [ ] Extended schemas for screens and verification evidence
-- [ ] Trigger tests and golden-output evaluations
-- [ ] Accessibility and responsive test recipes
+- [x] Extended schemas for screens and verification evidence
+- [x] Initial executable contract tests and trigger fixtures
+- [x] Accessibility and responsive test recipes
 - [ ] Contribution templates for new patterns
 
 ## 0.3 — Design intelligence

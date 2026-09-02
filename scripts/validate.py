@@ -120,6 +120,7 @@ def main() -> int:
     load_json("schemas/design-project.schema.json")
     check_project("templates/project.json")
     check_project("examples/focus-checkout.json")
+    check_project("examples/beacon/project.json")
     check_evals()
     check_links()
     if ERRORS:

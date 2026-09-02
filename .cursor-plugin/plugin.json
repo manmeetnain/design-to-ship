@@ -1,7 +1,7 @@
 {
   "name": "design-to-ship",
   "description": "An evidence-driven product design workflow from requirements to verified implementation.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Manmeet Nain"
   },
@@ -12,4 +12,3 @@
   "logo": "assets/mark.svg",
   "skills": "skills/"
 }
-

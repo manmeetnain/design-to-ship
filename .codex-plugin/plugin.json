@@ -1,6 +1,6 @@
 {
   "name": "design-to-ship",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An evidence-driven product design workflow from requirements to verified implementation.",
   "author": {
     "name": "Manmeet Nain"
@@ -16,4 +16,3 @@
     "defaultPrompt": "Use $design-to-ship in FULL mode to take this product from requirements through verified implementation."
   }
 }
-

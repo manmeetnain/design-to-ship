@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beacon incident queue</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#incident-queue">Skip to incident queue</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Beacon home"><span aria-hidden="true">◆</span> Beacon</a>
+    <div class="shift"><span class="pulse" aria-hidden="true"></span> On-call shift · 4h 12m left</div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Incident response</p>
+        <h1 id="page-title">What needs attention now</h1>
+        <p class="lede">Three unresolved incidents. One requires immediate ownership.</p>
+      </div>
+      <div class="metric" aria-label="Mean acknowledgement time">
+        <span>Mean acknowledge</span><strong>3m 18s</strong><small>↓ 42s this week</small>
+      </div>
+    </section>
+
+    <section class="summary" aria-label="Incident summary">
+      <div><strong>1</strong><span>Critical</span></div>
+      <div><strong>2</strong><span>Elevated</span></div>
+      <div><strong>4</strong><span>Watching</span></div>
+    </section>
+
+    <div class="workspace">
+      <section class="queue-panel" aria-labelledby="queue-title">
+        <div class="panel-heading">
+          <div><p class="eyebrow">Live queue</p><h2 id="queue-title">Unresolved</h2></div>
+          <label>Show
+            <select id="priority-filter">
+              <option value="all">All priorities</option>
+              <option value="critical">Critical only</option>
+              <option value="elevated">Elevated only</option>
+            </select>
+          </label>
+        </div>
+        <ol class="incident-list" id="incident-queue">
+          <li class="incident is-selected" data-priority="critical">
+            <button class="incident-select" aria-current="true" data-incident="INC-248">
+              <span class="incident-top"><span class="priority critical">Critical</span><time datetime="2026-09-02T13:41:00Z">6m ago</time></span>
+              <strong>Checkout API error rate above 18%</strong>
+              <span class="incident-meta">INC-248 · Owner: Priya S.</span>
+              <span class="update">Latest: rollback paused after database warning</span>
+            </button>
+            <button class="acknowledge" data-ack="INC-248">Acknowledge</button>
+          </li>
+          <li class="incident" data-priority="elevated">
+            <button class="incident-select" data-incident="INC-247">
+              <span class="incident-top"><span class="priority elevated">Elevated</span><time datetime="2026-09-02T13:29:00Z">18m ago</time></span>
+              <strong>EU image processing queue delayed</strong>
+              <span class="incident-meta">INC-247 · Owner: Mateo R.</span>
+              <span class="update">Latest: worker capacity increased by 20%</span>
+            </button>
+            <button class="acknowledge" data-ack="INC-247">Acknowledge</button>
+          </li>
+          <li class="incident" data-priority="elevated">
+            <button class="incident-select" data-incident="INC-245">
+              <span class="incident-top"><span class="priority elevated">Elevated</span><time datetime="2026-09-02T12:58:00Z">49m ago</time></span>
+              <strong>Webhook delivery retries increasing</strong>
+              <span class="incident-meta">INC-245 · Owner: Unassigned</span>
+              <span class="update">Latest: failures isolated to two tenants</span>
+            </button>
+            <button class="acknowledge" data-ack="INC-245">Acknowledge</button>
+          </li>
+        </ol>
+      </section>
+
+      <aside class="detail-panel" aria-labelledby="detail-title">
+        <p class="eyebrow">Selected incident</p>
+        <h2 id="detail-title">INC-248</h2>
+        <p class="detail-copy">Checkout requests are failing after the latest API deployment. Revenue-impacting traffic is affected in three regions.</p>
+        <dl>
+          <div><dt>Commander</dt><dd>Priya S.</dd></div>
+          <div><dt>Started</dt><dd>13:41 UTC</dd></div>
+          <div><dt>Affected</dt><dd>Checkout API</dd></div>
+          <div><dt>Status</dt><dd id="detail-status">Unacknowledged</dd></div>
+        </dl>
+        <h3>Latest timeline</h3>
+        <ol class="timeline">
+          <li><time>13:45</time><span>Rollback paused after database warning.</span></li>
+          <li><time>13:43</time><span>Error rate crossed the critical threshold.</span></li>
+          <li><time>13:41</time><span>Deployment completed in three regions.</span></li>
+        </ol>
+      </aside>
+    </div>
+  </main>
+  <p class="sr-only" id="status-message" aria-live="polite"></p>
+  <script src="app.js"></script>
+</body>
+</html>
+
