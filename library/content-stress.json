@@ -1,0 +1,18 @@
+{
+  "version": "0.3.0",
+  "cases": [
+    {"id":"empty","value":"","checks":["Meaningful empty state","No orphan punctuation"]},
+    {"id":"short","value":"A","checks":["Control does not collapse","Label remains understandable"]},
+    {"id":"long-name","value":"Alexandria-Catherine van der Meer-Wojciechowski","checks":["Wrap or truncate intentionally","Full value remains available when necessary"]},
+    {"id":"long-token","value":"customer_01JZZZZZZZZZZZZZZZZZZZZZZZ","checks":["No viewport overflow","Copy remains possible"]},
+    {"id":"large-number","value":"9,999,999,999.99","checks":["Meaning is preserved","Unit and sign remain visible"]},
+    {"id":"negative-number","value":"−₹12,45,678.90","checks":["Sign is not color-only","Locale grouping is respected"]},
+    {"id":"multiline-error","value":"We could not save this change because your session expired. Sign in again; your entered information has been preserved.","checks":["Message reflows","Recovery action remains adjacent"]},
+    {"id":"rtl","value":"هذا نص عربي لاختبار اتجاه الواجهة","checks":["Reading direction is correct","Icons with direction meaning mirror intentionally"]},
+    {"id":"cjk","value":"これは長いインターフェースラベルの表示を確認するテストです","checks":["Line breaking remains usable","No forced Latin assumptions"]},
+    {"id":"emoji","value":"Review complete ✅ — 2 issues remain ⚠️","checks":["Meaning does not depend on emoji","Accessible name is sensible"]},
+    {"id":"zoom","value":"Test at 200% browser zoom and increased text spacing.","checks":["No lost content","No two-dimensional scrolling for primary flow"]},
+    {"id":"unknown-date","value":"Date unavailable","checks":["Fallback is explicit","No fabricated timestamp"]}
+  ]
+}
+

@@ -10,7 +10,7 @@
   <a href="https://github.com/manmeetnain/design-to-ship/actions/workflows/validate.yml"><img alt="Validation" src="https://github.com/manmeetnain/design-to-ship/actions/workflows/validate.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-38BDF8.svg"></a>
   <img alt="Agent Skill" src="https://img.shields.io/badge/open-Agent_Skill-A7F3D0.svg">
-  <img alt="Release" src="https://img.shields.io/badge/release-0.2.0-CBD5E1.svg">
+  <img alt="Release" src="https://img.shields.io/badge/release-0.3.0-CBD5E1.svg">
 </p>
 
 ---
@@ -124,6 +124,7 @@ design-to-ship/
 │   └── references/              Progressive design knowledge
 ├── docs/                        Method and compatibility
 ├── schemas/                     Machine-readable contracts
+├── library/                     Product, UX, content, and anti-pattern intelligence
 ├── templates/                   Ready-to-copy project artifacts
 ├── examples/                    Worked examples
 ├── evals/                       Trigger and behavior cases

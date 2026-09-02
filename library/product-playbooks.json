@@ -1,0 +1,78 @@
+{
+  "version": "0.3.0",
+  "playbooks": [
+    {
+      "id": "saas-b2b",
+      "name": "B2B SaaS",
+      "primary_jobs": ["Reach value quickly", "Understand system status", "Coordinate work across roles"],
+      "trust_signals": ["Transparent status", "Permission clarity", "Auditability", "Recoverable actions"],
+      "critical_flows": ["Onboarding", "Workspace setup", "Invite and roles", "Core recurring task", "Billing and cancellation"],
+      "design_bias": "Prefer progressive disclosure, clear ownership, and durable navigation over marketing-like dashboards.",
+      "avoid": ["Empty dashboard cards without decisions", "Hiding limits until billing", "Role ambiguity"]
+    },
+    {
+      "id": "ai-product",
+      "name": "AI-assisted product",
+      "primary_jobs": ["Express intent", "Review generated work", "Correct or recover", "Understand system boundaries"],
+      "trust_signals": ["Source visibility", "Editable outputs", "Progress and cancellation", "Uncertainty disclosure"],
+      "critical_flows": ["Prompt or input", "Generation progress", "Review", "Revision", "Failure and retry", "History"],
+      "design_bias": "Design a collaborative control loop, not a magical text box. Preserve user agency and provenance.",
+      "avoid": ["Fabricated certainty", "Irreversible generation", "Hidden tool actions", "Dead-end errors"]
+    },
+    {
+      "id": "ecommerce",
+      "name": "E-commerce",
+      "primary_jobs": ["Evaluate a product", "Understand total cost", "Purchase confidently", "Track or return an order"],
+      "trust_signals": ["Accurate availability", "Clear delivery and returns", "Complete price", "Secure payment cues"],
+      "critical_flows": ["Discovery", "Product evaluation", "Cart", "Checkout", "Confirmation", "Tracking", "Returns"],
+      "design_bias": "Prioritize product evidence, decision support, and total-cost clarity over promotional chrome.",
+      "avoid": ["Forced registration", "Late fees", "False scarcity", "Variant ambiguity"]
+    },
+    {
+      "id": "fintech",
+      "name": "Financial product",
+      "primary_jobs": ["Understand money state", "Make a deliberate transaction", "Recover from uncertainty"],
+      "trust_signals": ["Exact amounts and timing", "Transaction status", "Review before commitment", "Receipts and history"],
+      "critical_flows": ["Identity and consent", "Account connection", "Money movement", "Confirmation", "Disputes", "Statements"],
+      "design_bias": "Optimize for comprehension, precision, and consequence visibility; reserve delight for reassurance rather than distraction.",
+      "avoid": ["Ambiguous pending states", "Color-only gain/loss", "Casual destructive language", "Unexplained projections"]
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare service",
+      "primary_jobs": ["Find appropriate care", "Understand next steps", "Manage appointments or treatment safely"],
+      "trust_signals": ["Clinical and organizational identity", "Privacy clarity", "Plain-language risk", "Escalation paths"],
+      "critical_flows": ["Triage", "Booking", "Consent", "Visit preparation", "Results", "Follow-up", "Urgent escalation"],
+      "design_bias": "Use calm, plain, inclusive communication and make urgent or safety-critical escalation unmistakable.",
+      "avoid": ["Diagnosis-like claims without authority", "Low-contrast calming palettes", "Hidden emergency guidance", "Assuming health literacy"]
+    },
+    {
+      "id": "marketplace",
+      "name": "Two-sided marketplace",
+      "primary_jobs": ["Evaluate counterparties", "Coordinate an exchange", "Resolve exceptions"],
+      "trust_signals": ["Identity and reputation", "Policy visibility", "Status tracking", "Dispute support"],
+      "critical_flows": ["Supply creation", "Discovery", "Comparison", "Booking or order", "Communication", "Settlement", "Dispute"],
+      "design_bias": "Balance both sides explicitly; reveal obligations, timing, and platform responsibility before commitment.",
+      "avoid": ["Optimizing one side invisibly", "Unclear fees", "Off-platform pressure", "Reputation without context"]
+    },
+    {
+      "id": "developer-tool",
+      "name": "Developer tool",
+      "primary_jobs": ["Reach first success", "Diagnose behavior", "Automate repeated work"],
+      "trust_signals": ["Copyable examples", "Observable state", "Stable terminology", "Actionable errors"],
+      "critical_flows": ["Install", "Authenticate", "First run", "Configure", "Debug", "Upgrade", "Remove"],
+      "design_bias": "Treat documentation, errors, logs, and defaults as core interface surfaces.",
+      "avoid": ["Happy-path-only quickstarts", "Opaque magic", "Uncopyable code", "Errors without recovery"]
+    },
+    {
+      "id": "consumer-productivity",
+      "name": "Consumer productivity",
+      "primary_jobs": ["Capture quickly", "Find what matters", "Maintain a sustainable habit"],
+      "trust_signals": ["Data portability", "Predictable reminders", "Undo", "Cross-device state clarity"],
+      "critical_flows": ["First capture", "Organization", "Daily return", "Search", "Reminder", "Archive or delete", "Export"],
+      "design_bias": "Minimize setup and maintenance cost; make the product quieter as the user's system becomes more complex.",
+      "avoid": ["Gamification pressure", "Rigid taxonomy", "Notification guilt", "Destructive cleanup"]
+    }
+  ]
+}
+

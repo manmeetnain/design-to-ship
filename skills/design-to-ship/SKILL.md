@@ -20,6 +20,8 @@ Select one mode and state it in the deliverable:
 
 Read [workflow.md](references/workflow.md) for gate requirements and stopping rules. Read [deliverables.md](references/deliverables.md) before producing artifacts. For review or verification, also read [quality-rubric.md](references/quality-rubric.md). For implementation work, read [implementation.md](references/implementation.md). For accessibility-sensitive work, read [accessibility.md](references/accessibility.md).
 
+When the repository library is available, consult `library/product-playbooks.json` for domain context, `library/ux-patterns.json` for specific journeys, `library/content-stress.json` for resilience cases, and `library/anti-patterns.json` during critique. Treat library guidance as contextual heuristics, not user research or universal rules.
+
 ## Establish the evidence ledger
 
 Before designing, classify consequential statements:

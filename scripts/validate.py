@@ -56,6 +56,12 @@ def check_versions() -> None:
         fail(".cursor-plugin/plugin.json: skills must point to skills/")
     if cursor.get("license") != "MIT":
         fail(".cursor-plugin/plugin.json: license must be MIT")
+    pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
+    if f'version = "{version}"' not in pyproject:
+        fail("pyproject.toml: version does not match VERSION")
+    package = (ROOT / "src/design_to_ship/__init__.py").read_text(encoding="utf-8")
+    if f'__version__ = "{version}"' not in package:
+        fail("Python package version does not match VERSION")
 
 
 def check_project(relative: str) -> None:
@@ -106,6 +112,9 @@ def check_required_files() -> None:
         "skills/design-to-ship/SKILL.md",
         "skills/design-to-ship/agents/openai.yaml",
         "schemas/design-project.schema.json",
+        "library/product-playbooks.json",
+        "library/ux-patterns.json",
+        "library/content-stress.json",
         ".github/workflows/validate.yml",
     ]
     for relative in paths:
@@ -118,6 +127,13 @@ def main() -> int:
     check_skill()
     check_versions()
     load_json("schemas/design-project.schema.json")
+    for relative in (
+        "library/product-playbooks.json",
+        "library/ux-patterns.json",
+        "library/content-stress.json",
+        "library/anti-patterns.json",
+    ):
+        load_json(relative)
     check_project("templates/project.json")
     check_project("examples/focus-checkout.json")
     check_project("examples/beacon/project.json")

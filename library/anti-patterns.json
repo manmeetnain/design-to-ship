@@ -1,0 +1,14 @@
+{
+  "version": "0.3.0",
+  "anti_patterns": [
+    {"id":"aesthetic-first","signal":"A style is selected before audience, content, and tasks are understood.","risk":"The result is polished but interchangeable.","correction":"Tie visual principles to product evidence and reject at least one credible alternative."},
+    {"id":"card-everything","signal":"Every content group becomes a bordered floating card.","risk":"Hierarchy flattens and scanning cost increases.","correction":"Use spacing, headings, alignment, and dividers before introducing containers."},
+    {"id":"happy-path-only","signal":"Only default and success screens exist.","risk":"Real use fails during delay, absence, denial, or error.","correction":"Create a state inventory and map recovery for every critical journey."},
+    {"id":"fake-proof","signal":"A generated screenshot or automated score is reported as complete verification.","risk":"Teams confuse appearance with functional and accessible correctness.","correction":"Record method, scope, environment, evidence, and untested claims."},
+    {"id":"dashboard-theater","signal":"Charts and metrics do not map to a decision or action.","risk":"Visual complexity hides weak product utility.","correction":"Trace every widget to a user question, threshold, comparison, or action."},
+    {"id":"color-as-state","signal":"Status, priority, gain, or loss is communicated only with color.","risk":"Meaning is inaccessible and fragile across environments.","correction":"Add explicit text, semantics, and where useful shape or position."},
+    {"id":"motion-as-polish","signal":"Animation exists without feedback, continuity, or spatial purpose.","risk":"It adds delay, distraction, and vestibular risk.","correction":"State the purpose, keep it interruptible, and provide reduced-motion behavior."},
+    {"id":"responsive-shrink","signal":"Desktop layout is only compressed for mobile.","risk":"Priority, reachability, and content break at narrow widths.","correction":"Recompose by task priority and content constraints."}
+  ]
+}
+

@@ -23,11 +23,11 @@ Design to Ship will grow through tested workflows rather than an unbounded colle
 
 ## 0.3 — Design intelligence
 
-- [ ] Product-type playbooks grounded in user context
-- [ ] Journey and state-pattern library
-- [ ] Content and localization stress-test corpus
-- [ ] Platform-specific guidance for web, iOS, Android, and desktop
-- [ ] Anti-pattern catalog with contextual explanations
+- [x] Initial product-type playbooks grounded in user context
+- [x] Twenty-pattern journey and state library
+- [x] Content and localization stress-test corpus
+- [x] Platform-specific guidance for web, iOS, Android, and desktop
+- [x] Anti-pattern catalog with contextual explanations
 
 ## 0.4 — Tooling
 

@@ -96,7 +96,8 @@ def command_evidence(args: argparse.Namespace) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="design-to-ship", description="Validate traceable product-design contracts")
-    parser.add_argument("--version", action="version", version="design-to-ship 0.2.0")
+    from . import __version__
+    parser.add_argument("--version", action="version", version=f"design-to-ship {__version__}")
     commands = parser.add_subparsers(dest="command", required=True)
 
     init = commands.add_parser("init", help="Create a project contract")
@@ -127,4 +128,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
