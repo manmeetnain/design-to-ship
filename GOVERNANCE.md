@@ -23,7 +23,10 @@ A substantive proposal must include context, intended outcome, rejected alternat
 
 Maintainers review evidence quality, scope, accessibility impact, security implications, and compatibility. They may reject large catalogs that lack provenance, context, retrieval design, or a maintenance plan.
 
+Changes to the canonical workflow, schemas, governance, security policy, and release surfaces require code-owner review. The `main` branch is protected: contributions enter through pull requests, required validation must pass, and review conversations must be resolved before merge.
+
+Maintainers credit merged contributions through Git history and release notes. Sustained contributors may be invited into scoped ownership as the project grows; ownership decisions remain explicit and reviewable.
+
 ## Version support
 
 The latest stable major version receives fixes. Security issues may be backported when impact and maintainability justify it.
-

@@ -1,5 +1,19 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Community pull-request template, code ownership, and guided extension proposals.
+- Contributor recognition and “Built with Design to Ship” showcase guidance.
+- Extension contracts for AI hosts, skills, frameworks, benchmarks, and compatible integrations.
+- Discussion, contribution, and private security-reporting routes.
+
+### Changed
+
+- Governance now documents protected-branch review expectations.
+- Security support wording now reflects the stable 1.0 release.
+
 All notable changes are documented here. The project follows semantic versioning after 1.0.0.
 
 ## 1.0.0 — 2026-09-02
@@ -30,4 +44,3 @@ All notable changes are documented here. The project follows semantic versioning
 ## 0.1.0 — 2026-09-02
 
 - Establish the five-gate method, portable skill, repository positioning, and initial schemas.
-

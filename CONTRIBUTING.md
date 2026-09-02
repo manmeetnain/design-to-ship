@@ -36,3 +36,14 @@ Keep the core `SKILL.md` concise. Put detailed or platform-specific material in 
 - Explain which gate and product outcome the change improves.
 - Include a realistic before/after example for behavioral changes.
 
+Use the repository pull-request template and keep each pull request focused on one reviewable outcome. Maintainer approval and passing validation are required before merge.
+
+## Ways to participate
+
+- Use an issue to report a reproducible problem or propose a bounded change.
+- Use Discussions for questions, early ideas, design critique, and show-and-tell.
+- Use a pull request for a reviewable implementation with evidence.
+- See [Extending Design to Ship](docs/extending.md) for adapters, skills, framework playbooks, benchmarks, and compatible integrations.
+- See [Contributors and adopters](CONTRIBUTORS.md) for recognition and showcase guidance.
+
+Contributors retain copyright in their work and provide it under the repository's MIT license when their contribution is merged.

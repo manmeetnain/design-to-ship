@@ -10,5 +10,4 @@ Include the affected version, reproduction steps, likely impact, and any suggest
 
 ## Supported versions
 
-Security fixes apply to the latest tagged release. The project will document broader support when it reaches 1.0.
-
+Security fixes apply to the latest stable major release. Any supported older release line or backport will be listed here explicitly; versions not listed should be treated as unsupported.

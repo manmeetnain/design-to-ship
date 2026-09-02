@@ -1,0 +1,46 @@
+name: Extension proposal
+description: Propose an adapter, skill, framework playbook, benchmark, or compatible integration.
+title: "[Extension]: "
+labels: [enhancement, extension]
+body:
+  - type: dropdown
+    id: extension-type
+    attributes:
+      label: Extension type
+      options:
+        - AI model or host adapter
+        - Agent skill
+        - Framework or platform playbook
+        - Benchmark or evaluation
+        - Compatible integration
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and intended outcome
+      description: Explain who needs this extension, where it runs, and what outcome it improves.
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: Contract mapping
+      description: Identify the workflow gates, inputs, outputs, and E-/R-/D-/V-* identifiers affected.
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification plan
+      description: Explain how compatibility and behavior will be tested without overstating support.
+    validations:
+      required: true
+  - type: textarea
+    id: maintenance
+    attributes:
+      label: Ownership and maintenance
+      description: Name the proposed owner and how upstream changes will be tracked.
+    validations:
+      required: true
+

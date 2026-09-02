@@ -125,6 +125,7 @@ design-to-ship/
 │   ├── agents/openai.yaml       OpenAI interface metadata
 │   └── references/              Progressive design knowledge
 ├── docs/                        Method and compatibility
+├── CONTRIBUTORS.md              Contributor recognition and adopter showcase
 ├── SPECIFICATION.md             Stable 1.0 workflow contract
 ├── schemas/                     Machine-readable contracts
 ├── library/                     Product, UX, content, and anti-pattern intelligence
@@ -184,6 +185,8 @@ python3 scripts/validate.py
 ```
 
 The [roadmap](ROADMAP.md) prioritizes tested workflows, machine-readable contracts, and grounded product playbooks over an unmaintainable pile of design links.
+
+Questions and early ideas belong in [GitHub Discussions](https://github.com/manmeetnain/design-to-ship/discussions). Concrete problems and proposals belong in [Issues](https://github.com/manmeetnain/design-to-ship/issues), and reviewed implementations arrive through pull requests. See [how to extend the project](docs/extending.md) and the [contributors and adopters page](CONTRIBUTORS.md).
 
 Read [governance](GOVERNANCE.md), [interoperability](docs/interoperability.md), the [migration guide](docs/migration.md), and the [changelog](CHANGELOG.md) for the stable release contract.
 
