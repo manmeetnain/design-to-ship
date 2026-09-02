@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design-to-ship.dev/schemas/design-project.schema.json",
+  "title": "Design to Ship project",
+  "type": "object",
+  "required": ["project", "mode", "evidence", "requirements", "verdict"],
+  "properties": {
+    "project": { "type": "string", "minLength": 1 },
+    "mode": {
+      "enum": ["EXPLORE", "DEFINE", "DESIGN", "BUILD", "AUDIT", "FULL"]
+    },
+    "outcome": { "type": "string" },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "claim"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^E-[0-9]+$" },
+          "status": {
+            "enum": ["CONFIRMED", "INFERRED", "PROPOSED", "UNKNOWN", "CONFLICTING"]
+          },
+          "claim": { "type": "string", "minLength": 1 },
+          "source": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "requirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "statement", "evidence_ids"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^R-[0-9]+$" },
+          "statement": { "type": "string", "minLength": 1 },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^E-[0-9]+$" }
+          },
+          "acceptance_criteria": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "choice", "requirement_ids", "verification"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^D-[0-9]+$" },
+          "choice": { "type": "string" },
+          "requirement_ids": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^R-[0-9]+$" }
+          },
+          "alternative": { "type": "string" },
+          "tradeoff": { "type": "string" },
+          "verification": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "verdict": {
+      "enum": ["READY", "READY WITH RISKS", "REVISE", "BLOCKED"]
+    }
+  },
+  "additionalProperties": false
+}
+

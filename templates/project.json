@@ -1,0 +1,33 @@
+{
+  "project": "Example product",
+  "mode": "FULL",
+  "outcome": "Describe the measurable user or business outcome.",
+  "evidence": [
+    {
+      "id": "E-01",
+      "status": "CONFIRMED",
+      "claim": "Replace with a claim supported by the brief.",
+      "source": "brief.md"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R-01",
+      "statement": "Replace with an outcome-oriented requirement.",
+      "evidence_ids": ["E-01"],
+      "acceptance_criteria": ["Replace with an observable condition."]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-01",
+      "choice": "Replace with the selected approach.",
+      "requirement_ids": ["R-01"],
+      "alternative": "Replace with a credible rejected approach.",
+      "tradeoff": "Replace with the cost or limitation accepted.",
+      "verification": "Replace with how the decision will be checked."
+    }
+  ],
+  "verdict": "REVISE"
+}
+

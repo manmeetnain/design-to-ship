@@ -1,0 +1,19 @@
+{
+  "name": "design-to-ship",
+  "version": "0.1.0",
+  "description": "An evidence-driven product design workflow from requirements to verified implementation.",
+  "author": {
+    "name": "Manmeet Nain"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Design to Ship",
+    "shortDescription": "Move from product intent to production proof.",
+    "longDescription": "Plan, structure, design, implement, and verify digital products through five traceable quality gates.",
+    "developerName": "Manmeet Nain",
+    "category": "Developer Tools",
+    "capabilities": ["Product design", "UX architecture", "Design systems", "Implementation planning", "UI verification"],
+    "defaultPrompt": "Use $design-to-ship in FULL mode to take this product from requirements through verified implementation."
+  }
+}
+

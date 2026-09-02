@@ -1,0 +1,7 @@
+interface:
+  display_name: "Design to Ship"
+  short_description: "Turn product intent into verified interfaces"
+  icon_small: "./assets/mark.svg"
+  icon_large: "./assets/mark.svg"
+  brand_color: "#38BDF8"
+  default_prompt: "Use $design-to-ship to take this product from requirements through UX, visual design, implementation guidance, and evidence-based verification."

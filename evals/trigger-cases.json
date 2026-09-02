@@ -1,0 +1,17 @@
+{
+  "should_trigger": [
+    "Turn this PRD into a complete UX and implementation plan.",
+    "Design the onboarding flow, including empty and error states.",
+    "Audit this dashboard against its requirements and provide evidence.",
+    "Create a design system for this healthcare scheduling product.",
+    "Implement this approved interface and verify it at mobile widths."
+  ],
+  "should_not_trigger": [
+    "Rename this variable and run the unit test.",
+    "Explain how a binary search works.",
+    "Summarize the latest five Git commits.",
+    "Rotate this PDF by ninety degrees.",
+    "Calculate the compound interest on this amount."
+  ]
+}
+

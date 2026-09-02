@@ -1,0 +1,33 @@
+name: Workflow problem
+description: Report incorrect, unsafe, or inconsistent Design to Ship behavior.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Which agent, mode, and artifact were involved?
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Reproduction prompt
+      description: Remove secrets and personal data.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed result
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+

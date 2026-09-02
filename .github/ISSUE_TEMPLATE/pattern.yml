@@ -1,0 +1,31 @@
+name: Design pattern proposal
+description: Propose evidence-backed guidance or a new product pattern.
+title: "[Pattern]: "
+labels: [enhancement, pattern]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: Applicable context
+      description: Describe where this guidance applies and where it does not.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Product or user outcome
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and sources
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification method
+    validations:
+      required: true
+

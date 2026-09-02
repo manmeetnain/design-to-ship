@@ -1,0 +1,61 @@
+{
+  "project": "Focus Checkout",
+  "mode": "DEFINE",
+  "outcome": "Help first-time mobile shoppers understand their total and complete checkout without mandatory account creation.",
+  "evidence": [
+    {
+      "id": "E-01",
+      "status": "CONFIRMED",
+      "claim": "The hypothetical brief requires guest checkout.",
+      "source": "examples/focus-checkout.md"
+    },
+    {
+      "id": "E-02",
+      "status": "CONFIRMED",
+      "claim": "The target includes 375 px mobile screens.",
+      "source": "examples/focus-checkout.md"
+    },
+    {
+      "id": "E-03",
+      "status": "PROPOSED",
+      "claim": "Show delivery cost before requesting payment details."
+    },
+    {
+      "id": "E-04",
+      "status": "UNKNOWN",
+      "claim": "Supported payment methods and regions are not specified."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R-01",
+      "statement": "A shopper can continue without creating an account.",
+      "evidence_ids": ["E-01"],
+      "acceptance_criteria": ["A signed-out shopper reaches confirmation without a mandatory password field."]
+    },
+    {
+      "id": "R-02",
+      "statement": "The primary path remains usable at 375 px.",
+      "evidence_ids": ["E-02"],
+      "acceptance_criteria": ["Controls do not overlap, clip, or require horizontal scrolling at 200% zoom."]
+    },
+    {
+      "id": "R-03",
+      "statement": "Cost changes are visible before payment confirmation.",
+      "evidence_ids": ["E-03"],
+      "acceptance_criteria": ["Shipping, tax, discounts, and total changes are visible before confirmation."]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D-01",
+      "choice": "Keep account creation optional until after confirmation.",
+      "requirement_ids": ["R-01"],
+      "alternative": "Require sign-in before payment.",
+      "tradeoff": "Collect less pre-purchase identity data in exchange for lower interruption.",
+      "verification": "Complete checkout in a signed-out session."
+    }
+  ],
+  "verdict": "READY WITH RISKS"
+}
+

@@ -1,0 +1,15 @@
+{
+  "name": "design-to-ship",
+  "description": "An evidence-driven product design workflow from requirements to verified implementation.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Manmeet Nain"
+  },
+  "homepage": "https://github.com/manmeetnain/design-to-ship",
+  "repository": "https://github.com/manmeetnain/design-to-ship",
+  "license": "MIT",
+  "keywords": ["agent-skills", "product-design", "ui-ux", "design-systems", "design-to-code", "accessibility"],
+  "logo": "assets/mark.svg",
+  "skills": "skills/"
+}
+
