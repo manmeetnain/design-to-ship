@@ -10,7 +10,7 @@
   <a href="https://github.com/manmeetnain/design-to-ship/actions/workflows/validate.yml"><img alt="Validation" src="https://github.com/manmeetnain/design-to-ship/actions/workflows/validate.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-38BDF8.svg"></a>
   <img alt="Agent Skill" src="https://img.shields.io/badge/open-Agent_Skill-A7F3D0.svg">
-  <img alt="Release" src="https://img.shields.io/badge/release-0.3.0-CBD5E1.svg">
+  <img alt="Release" src="https://img.shields.io/badge/release-0.4.0-CBD5E1.svg">
 </p>
 
 ---
@@ -144,6 +144,18 @@ E-01 evidence
        └── D-01 design decision
             └── acceptance criterion
                  └── verification method
+```
+
+## CLI
+
+The dependency-light CLI validates contracts, exposes the design-intelligence library, prints traceability, exports handoffs, and creates evidence bundles:
+
+```bash
+PYTHONPATH=src python3 -m design_to_ship validate examples/beacon/project.json
+PYTHONPATH=src python3 -m design_to_ship trace examples/beacon/project.json
+PYTHONPATH=src python3 -m design_to_ship library patterns onboarding
+PYTHONPATH=src python3 -m design_to_ship export examples/beacon/project.json --output /tmp/beacon.md
+PYTHONPATH=src python3 -m design_to_ship evidence examples/beacon/project.json --output /tmp/beacon-evidence
 ```
 
 ## Design principles

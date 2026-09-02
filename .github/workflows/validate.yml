@@ -36,3 +36,5 @@ jobs:
           python3 -m design_to_ship validate examples/focus-checkout.json
           python3 -m design_to_ship trace examples/focus-checkout.json
           python3 -m design_to_ship validate examples/beacon/project.json
+          python3 -m design_to_ship library patterns checkout
+          python3 -m design_to_ship export examples/beacon/project.json --output /tmp/beacon-contract.md

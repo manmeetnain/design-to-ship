@@ -12,6 +12,8 @@ from pathlib import Path
 
 from .contract import Finding, validate_project
 
+ROOT = Path(__file__).resolve().parents[2]
+
 
 def _load(path: Path) -> dict:
     try:
@@ -94,6 +96,53 @@ def command_evidence(args: argparse.Namespace) -> int:
     return 1 if any(item.severity == "error" for item in findings) else 0
 
 
+def _library_entries(kind: str) -> list[dict]:
+    mapping = {
+        "playbooks": ("library/product-playbooks.json", "playbooks"),
+        "patterns": ("library/ux-patterns.json", "patterns"),
+        "anti-patterns": ("library/anti-patterns.json", "anti_patterns"),
+        "stress": ("library/content-stress.json", "cases"),
+    }
+    relative, key = mapping[kind]
+    return _load(ROOT / relative).get(key, [])
+
+
+def command_library(args: argparse.Namespace) -> int:
+    entries = _library_entries(args.kind)
+    query = (args.query or "").lower()
+    if query:
+        entries = [entry for entry in entries if query in json.dumps(entry).lower()]
+    if args.json:
+        print(json.dumps(entries, indent=2))
+    else:
+        for entry in entries:
+            summary = entry.get("name") or entry.get("job") or entry.get("signal") or entry.get("value", "")
+            print(f"{entry.get('id')}\t{summary}")
+    return 0 if entries else 1
+
+
+def command_export(args: argparse.Namespace) -> int:
+    project = _load(Path(args.project))
+    output = Path(args.output).resolve()
+    lines = [f"# {project.get('project', 'Untitled project')}", "", f"**Mode:** `{project.get('mode')}`  ", f"**Verdict:** `{project.get('verdict')}`", "", "## Outcome", "", project.get("outcome", "Not specified."), "", "## Evidence", "", "| ID | Status | Claim |", "|---|---|---|"]
+    for item in project.get("evidence", []):
+        lines.append(f"| {item.get('id')} | {item.get('status')} | {item.get('claim')} |")
+    lines.extend(["", "## Requirements", "", "| ID | Requirement | Evidence | Acceptance criteria |", "|---|---|---|---|"])
+    for item in project.get("requirements", []):
+        criteria = "<br>".join(item.get("acceptance_criteria", []))
+        lines.append(f"| {item.get('id')} | {item.get('statement')} | {', '.join(item.get('evidence_ids', []))} | {criteria} |")
+    lines.extend(["", "## Decisions", "", "| ID | Choice | Requirements | Tradeoff | Verification |", "|---|---|---|---|---|"])
+    for item in project.get("decisions", []):
+        lines.append(f"| {item.get('id')} | {item.get('choice')} | {', '.join(item.get('requirement_ids', []))} | {item.get('tradeoff', '')} | {item.get('verification', '')} |")
+    lines.extend(["", "## Verification", "", "| ID | Requirements | Result | Method | Evidence |", "|---|---|---|---|---|"])
+    for item in project.get("verifications", []):
+        lines.append(f"| {item.get('id')} | {', '.join(item.get('requirement_ids', []))} | {item.get('result')} | {item.get('method')} | {item.get('evidence')} |")
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    print(output)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="design-to-ship", description="Validate traceable product-design contracts")
     from . import __version__
@@ -118,6 +167,17 @@ def build_parser() -> argparse.ArgumentParser:
     evidence.add_argument("project")
     evidence.add_argument("--output", default="evidence-bundle")
     evidence.set_defaults(handler=command_evidence)
+
+    library = commands.add_parser("library", help="Search the bundled design intelligence")
+    library.add_argument("kind", choices=["playbooks", "patterns", "anti-patterns", "stress"])
+    library.add_argument("query", nargs="?")
+    library.add_argument("--json", action="store_true")
+    library.set_defaults(handler=command_library)
+
+    export = commands.add_parser("export", help="Export a project contract as Markdown")
+    export.add_argument("project")
+    export.add_argument("--output", required=True)
+    export.set_defaults(handler=command_export)
     return parser
 
 

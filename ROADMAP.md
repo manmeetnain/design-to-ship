@@ -31,10 +31,10 @@ Design to Ship will grow through tested workflows rather than an unbounded colle
 
 ## 0.4 — Tooling
 
-- [ ] CLI to initialize and validate Design to Ship projects
-- [ ] Exportable design and verification contracts
-- [ ] Optional Figma and codebase adapters
-- [ ] Automated evidence bundle generation
+- [x] CLI to initialize and validate Design to Ship projects
+- [x] Exportable design and verification contracts
+- [x] Optional Figma and codebase adapter contracts
+- [x] Automated evidence bundle generation
 
 ## 1.0 — Open design operating system
 
