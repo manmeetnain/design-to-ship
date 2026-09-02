@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://design-to-ship.dev/schemas/design-project.schema.json",
+  "$id": "https://raw.githubusercontent.com/manmeetnain/design-to-ship/v1.0.0/schemas/design-project.schema.json",
   "title": "Design to Ship project",
   "type": "object",
   "required": ["project", "mode", "evidence", "requirements", "verdict"],

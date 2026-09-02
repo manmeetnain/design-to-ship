@@ -32,6 +32,11 @@ jobs:
           PYTHONPATH: src
         run: python3 -m unittest discover -s tests -v
 
+      - name: Run public benchmark
+        env:
+          PYTHONPATH: src
+        run: python3 benchmarks/run.py
+
       - name: Exercise CLI
         env:
           PYTHONPATH: src

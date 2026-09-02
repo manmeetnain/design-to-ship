@@ -1,7 +1,7 @@
 {
   "name": "design-to-ship-verification",
   "private": true,
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Optional browser verification for Design to Ship examples",
   "scripts": {
     "test": "npm run test:browser",
@@ -11,4 +11,3 @@
     "playwright": "^1.55.0"
   }
 }
-

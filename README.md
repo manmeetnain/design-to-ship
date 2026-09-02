@@ -10,7 +10,7 @@
   <a href="https://github.com/manmeetnain/design-to-ship/actions/workflows/validate.yml"><img alt="Validation" src="https://github.com/manmeetnain/design-to-ship/actions/workflows/validate.yml/badge.svg"></a>
   <a href="LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-38BDF8.svg"></a>
   <img alt="Agent Skill" src="https://img.shields.io/badge/open-Agent_Skill-A7F3D0.svg">
-  <img alt="Release" src="https://img.shields.io/badge/release-0.5.0-CBD5E1.svg">
+  <img alt="Release" src="https://img.shields.io/badge/release-1.0.0-CBD5E1.svg">
 </p>
 
 ---
@@ -36,6 +36,8 @@ Most design resources stop at inspiration. Most design-to-code tools begin after
 | Hides assumptions in fluent prose | Labels claims as confirmed, inferred, proposed, unknown, or conflicting |
 
 This is not a UI kit, trend catalog, or prompt that promises magic. It is the missing operating layer between product thinking and production work.
+
+**Version 1.0 is stable.** The operating modes, evidence language, traceability identifiers, five gates, capability levels, and verdict meanings are governed by the [Design to Ship specification](SPECIFICATION.md).
 
 ## Quick start
 
@@ -123,6 +125,7 @@ design-to-ship/
 │   ├── agents/openai.yaml       OpenAI interface metadata
 │   └── references/              Progressive design knowledge
 ├── docs/                        Method and compatibility
+├── SPECIFICATION.md             Stable 1.0 workflow contract
 ├── schemas/                     Machine-readable contracts
 ├── library/                     Product, UX, content, and anti-pattern intelligence
 ├── templates/                   Ready-to-copy project artifacts
@@ -181,6 +184,8 @@ python3 scripts/validate.py
 ```
 
 The [roadmap](ROADMAP.md) prioritizes tested workflows, machine-readable contracts, and grounded product playbooks over an unmaintainable pile of design links.
+
+Read [governance](GOVERNANCE.md), [interoperability](docs/interoperability.md), the [migration guide](docs/migration.md), and the [changelog](CHANGELOG.md) for the stable release contract.
 
 ## License
 

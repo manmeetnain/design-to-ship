@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "cases": [
+    {"name":"valid-ready","fixture":"valid-ready.json","expected_errors":[]},
+    {"name":"ready-without-proof","fixture":"ready-without-proof.json","expected_errors":["DTS017"]},
+    {"name":"unknown-evidence-reference","fixture":"unknown-evidence-reference.json","expected_errors":["DTS008"]},
+    {"name":"passing-proof-without-evidence","fixture":"passing-proof-without-evidence.json","expected_errors":["DTS016"]}
+  ]
+}
+

@@ -1,0 +1,1 @@
+{"project":"Broken reference","mode":"DEFINE","outcome":"Expose reference error","evidence":[],"requirements":[{"id":"R-01","statement":"Requirement","evidence_ids":["E-404"],"acceptance_criteria":["Criterion"]}],"decisions":[],"verifications":[],"verdict":"REVISE"}

@@ -38,8 +38,15 @@ Design to Ship will grow through tested workflows rather than an unbounded colle
 
 ## 1.0 — Open design operating system
 
-- [ ] Stable workflow and schema specification
-- [ ] Multi-agent and multi-tool interoperability
-- [ ] Public benchmark suite
-- [ ] Maintainer-reviewed product playbooks
-- [ ] Versioned migration and governance model
+- [x] Stable workflow and schema specification
+- [x] Multi-agent and multi-tool interoperability
+- [x] Public benchmark suite
+- [x] Initial maintainer-reviewed product playbooks
+- [x] Versioned migration and governance model
+
+## Beyond 1.0
+
+- Expand playbooks only through evidence-backed contributions.
+- Add audited integrations without introducing mandatory external services.
+- Grow the benchmark with real failure cases and cross-host runs.
+- Publish deeper end-to-end examples for mobile, commerce, AI, and regulated products.

@@ -62,6 +62,12 @@ def check_versions() -> None:
     package = (ROOT / "src/design_to_ship/__init__.py").read_text(encoding="utf-8")
     if f'__version__ = "{version}"' not in package:
         fail("Python package version does not match VERSION")
+    package_json = load_json("package.json")
+    package_lock = load_json("package-lock.json")
+    if package_json.get("version") != version:
+        fail("package.json: version does not match VERSION")
+    if package_lock.get("version") != version or package_lock.get("packages", {}).get("", {}).get("version") != version:
+        fail("package-lock.json: version does not match VERSION")
 
 
 def check_project(relative: str) -> None:
@@ -108,6 +114,9 @@ def check_required_files() -> None:
     paths = [
         "README.md",
         "LICENSE",
+        "SPECIFICATION.md",
+        "GOVERNANCE.md",
+        "CHANGELOG.md",
         "AGENTS.md",
         "skills/design-to-ship/SKILL.md",
         "skills/design-to-ship/agents/openai.yaml",
@@ -115,6 +124,7 @@ def check_required_files() -> None:
         "library/product-playbooks.json",
         "library/ux-patterns.json",
         "library/content-stress.json",
+        "benchmarks/cases.json",
         ".github/workflows/validate.yml",
     ]
     for relative in paths:
@@ -122,16 +132,28 @@ def check_required_files() -> None:
             fail(f"missing required file: {relative}")
 
 
+def check_all_json() -> None:
+    for path in ROOT.rglob("*.json"):
+        if {".git", "node_modules", "artifacts"} & set(path.parts):
+            continue
+        try:
+            json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError as exc:
+            fail(f"{path.relative_to(ROOT)}: invalid JSON: {exc}")
+
+
 def main() -> int:
     check_required_files()
     check_skill()
     check_versions()
+    check_all_json()
     load_json("schemas/design-project.schema.json")
     for relative in (
         "library/product-playbooks.json",
         "library/ux-patterns.json",
         "library/content-stress.json",
         "library/anti-patterns.json",
+        "benchmarks/cases.json",
     ):
         load_json(relative)
     check_project("templates/project.json")
